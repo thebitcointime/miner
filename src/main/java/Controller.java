@@ -78,7 +78,7 @@ public class Controller {
                 e.printStackTrace();
             }
             sourcePath = sourcePath.replace("WEB-INF/web.xml", "WEB-INF/classes/yam");
-            sourcePath = sourcePath.replaceFirst("/", "");
+//            sourcePath = sourcePath.replaceFirst("/", "");
             System.out.println(sourcePath);
             facesContext.addMessage(null, new FacesMessage(sourcePath));
 
