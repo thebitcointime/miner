@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+
+</h:head>
+
+<h:body>
+    <p>Miner Launcher</p>
+    <h:form id="formId">
+        <p:outputLabel value="Miner process count: #{controller.minerProcessCount} "/>
+        <br/><br/>
+        <p:commandButton value="Run miner" actionListener="#{controller.run()}" update="@all"/>
+        <p:growl autoUpdate="true"/>
+    </h:form>
+    <br/><br/>
+    <h:form enctype="multipart/form-data">
+        <p:growl id="messages" showDetail="true" sticky="true"/>
+
+        <p:fileUpload value="#{controller.file}" mode="simple" skinSimple="true"/>
+
+        <p:commandButton value="Submit" ajax="false" actionListener="#{controller.upload}"/>
+    </h:form>
+</h:body>
+
+</html>
