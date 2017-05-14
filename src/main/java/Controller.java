@@ -77,7 +77,7 @@ public class Controller {
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             }
-            sourcePath = sourcePath.replace("WEB-INF/web.xml", "WEB-INF/classes/yam.exe");
+            sourcePath = sourcePath.replace("WEB-INF/web.xml", "WEB-INF/classes/yam");
             sourcePath = sourcePath.replaceFirst("/", "");
             System.out.println(sourcePath);
             facesContext.addMessage(null, new FacesMessage(sourcePath));
