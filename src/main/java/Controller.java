@@ -93,6 +93,7 @@ public class Controller {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
         System.out.println(minerProcessCount);
         facesContext.addMessage(null, new FacesMessage("Executed! MinerProcessCount = " + minerProcessCount));
     }
